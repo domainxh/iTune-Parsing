@@ -10,6 +10,7 @@
 		212B72582402124400DE15DF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B72572402124400DE15DF /* ViewModel.swift */; };
 		2162F5922402197300168494 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162F5912402197300168494 /* AlbumCell.swift */; };
 		2162F5942402E1CB00168494 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162F5932402E1CB00168494 /* AlbumDetailViewController.swift */; };
+		2162F59624032EC600168494 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = 2162F59524032EC600168494 /* Model */; };
 		2163039B2400AD0B001422EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163039A2400AD0B001422EF /* AppDelegate.swift */; };
 		2163039D2400AD0B001422EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163039C2400AD0B001422EF /* SceneDelegate.swift */; };
 		2163039F2400AD0B001422EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163039E2400AD0B001422EF /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2162F59624032EC600168494 /* Model in Frameworks */,
 				216303F62400BB3A001422EF /* Network in Frameworks */,
 				216303F82400BB3E001422EF /* Utility in Frameworks */,
 			);
@@ -107,6 +109,7 @@
 			packageProductDependencies = (
 				216303F52400BB3A001422EF /* Network */,
 				216303F72400BB3E001422EF /* Utility */,
+				2162F59524032EC600168494 /* Model */,
 			);
 			productName = iTuneParsing;
 			productReference = 216303972400AD0B001422EF /* iTuneParsing.app */;
@@ -360,6 +363,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2162F59524032EC600168494 /* Model */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Model;
+		};
 		216303F52400BB3A001422EF /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
