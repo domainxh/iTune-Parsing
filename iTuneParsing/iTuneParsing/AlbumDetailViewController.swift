@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Network
+import Model
 
 class AlbumDetailViewController: UIViewController {
     private var artistTypeLabel: UILabel = {

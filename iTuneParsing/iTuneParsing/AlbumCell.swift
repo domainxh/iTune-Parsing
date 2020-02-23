@@ -8,7 +8,7 @@
 
 import UIKit
 import Utility
-import Network
+import Model
 
 class AlbumCell: UITableViewCell {
     

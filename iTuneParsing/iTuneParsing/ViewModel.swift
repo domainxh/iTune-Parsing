@@ -8,6 +8,7 @@
 
 import Foundation
 import Network
+import Model
 
 // Unlike SwiftUI, UIKit does not have binding out of the box. If I have more time, I would implement binding to allow automatic update of view as opposed to using completion hanlder.
 
