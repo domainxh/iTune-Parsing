@@ -10,13 +10,18 @@ import UIKit
 import Model
 
 class AlbumDetailViewController: UIViewController {
+    
+    private let padding: CGFloat = 8
     private var artistTypeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    private var collectionNameLabel: UILabel = {
+    private lazy var collectionNameLabel: UILabel = {
         let label = UILabel()
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - padding
         return label
     }()
 
@@ -25,8 +30,9 @@ class AlbumDetailViewController: UIViewController {
         return label
     }()
 
-    private var artistLinkUrlLabel: UILabel = {
+    private lazy var artistLinkUrlLabel: UILabel = {
         let label = UILabel()
+        label.preferredMaxLayoutWidth = UIScreen.main.bounds.width - padding
         return label
     }()
     

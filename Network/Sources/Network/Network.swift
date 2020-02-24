@@ -30,6 +30,8 @@ public struct Network {
     }
         
 //    https://itunes.apple.com/lookup?id=909253&entity=album
+//    https://itunes.apple.com/lookup?id=909253&entity=song
+    
     
 }
 

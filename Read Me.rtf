@@ -1,0 +1,19 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11640\viewh11800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 The app is built utilizing MVVM design pattern with focus on modularization. Each module is built using Swift Package Manager and gets pulled into the main app as dependency. This type of architecture allows faster compile time with parallelization and makes it significantly easier to maintain years down. All unit test gets encapsulated in their respective Module, keeping the main app skinny and organized. Currently there are 3 modules, Network, Model, Utility. In a real world app, one would have a much mores sophisticated breakdowns. Possibly including, Analytics, Data Manager, Payment, UIComponent and etc. \
+\
+All UI are layout programmatically without utilizing storyboard/xibs. Storyboard/xibs are buggy and makes it incredibly difficult to code review. Oftentimes the simple act of opening a storyboard, cause changes in file, and may cause X-Code to crash. \
+\
+All strings are stored in the Localizable file. This keeps all UI text central, and improves the user experience should the user decide to use English vs Chinese vs Spanish (provided that you add support for those languages). \
+\
+Due to lack of time, only the very basic features were implemented. I should also add a note that instead of parsing for a list of Songs, I misread the requirement and accidentally parse for a list of Albums. But the general idea are the same. I only came to realize it as I was getting ready to submit my work. \
+\
+If I have more time, I would like to implement the following things\'85\
+	1. Make viewModels bindable. Such that any changes in viewModel, automatically gets propagated. \
+	2. Add error handling/display alert to handle various failure cases. Ex: network connection, parsing/decoding failure, and etc. \
+	}
