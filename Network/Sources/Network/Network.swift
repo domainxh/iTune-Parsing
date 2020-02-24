@@ -15,7 +15,8 @@ public struct Network {
             URLQueryItem(name: "entity", value: "album")
         ]
         
-        URLSession.shared.dataTask(with: components.url!) { (data, response, error) in
+        guard let url = components.url else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             
             do {
