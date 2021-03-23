@@ -26,18 +26,18 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(AlbumCell.self, forCellReuseIdentifier: AlbumCell.reuseIdentifier)
         title = NSLocalizedString("Albums", comment: "")
-        updateViewModel()
+        setupViewModelBinding()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumCell.reuseIdentifier, for: indexPath) as? AlbumCell else { return UITableViewCell() }
-        let album = viewModel.albums[indexPath.item]
+        let album = viewModel.albums.value[indexPath.item]
         cell.configure(album)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.albums.count
+        return viewModel.albums.value.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,16 +45,16 @@ class ViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let album = viewModel.albums[indexPath.item]
+        let album = viewModel.albums.value[indexPath.item]
         let albumDetailViewController = AlbumDetailViewController(album)
         navigationController?.pushViewController(albumDetailViewController, animated: true)
     }
     
-    private func updateViewModel() {
-        viewModel.fetch { [weak self] in
-            guard let self = self else { return }
+    private func setupViewModelBinding() {
+        viewModel.fetchAlbum()
+        viewModel.albums.bind { [weak self] _ in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }

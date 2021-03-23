@@ -22,3 +22,8 @@ public struct Album: Decodable {
     public let collectionPrice: Double?
     public let trackCount: Int?
 }
+
+public enum NetworkError: Error {
+    case domainError
+    case decodingError
+}

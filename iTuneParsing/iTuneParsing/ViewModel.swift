@@ -9,19 +9,20 @@
 import Foundation
 import Network
 import Model
-
-// Unlike SwiftUI, UIKit does not have binding out of the box. If I have more time, I would implement binding to allow automatic update of view as opposed to using completion hanlder.
+import Utility
 
 class ViewModel {
 
-    var albums = [Album]()
-
-    func fetch(completion: @escaping () -> ()) {
-        Network.shared.fetchAlbum { [weak self] (albums) in
-            guard let self = self else { return }
-            self.albums = albums
-            completion()
+    var albums: Box<[Album]> = Box([])
+    
+    func fetchAlbum() {
+        Network.shared.fetchAlbum { result in
+            switch result {
+            case .success(let albums):
+                self.albums.value = albums
+            case .failure:
+                print("Album fetch failed")
+            }
         }
     }
-    
 }
